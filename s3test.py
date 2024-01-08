@@ -1,10 +1,16 @@
 import boto3
  
+file1 = open('e:\\amazon\\RickS3Keys.txt', 'r')
+lines = file1.readlines()
+key1 = lines[0].strip()
+key2 = lines[1].strip()
+print(key1)
+print(key2)
 s3client = boto3.client(
     's3',
     region_name='us-east-1',
-    aws_access_key_id='AKIAX2S2J624EE6ML65Q',
-         aws_secret_access_key= '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'
+    aws_access_key_id=key1,
+         aws_secret_access_key= key2
 )
  
 # These define the bucket and object to read
